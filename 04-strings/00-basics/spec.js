@@ -6,7 +6,7 @@ describe("formLetter", function() {
     expect(challenge.formLetter).to.exist;
   });
 
-  it("should return a properly formated letter", function() {
+  it("should return a properly formatted letter", function() {
     result = "Hello Rob,\n\nTake care.\n\nSincerely,\nJoe";
     expect(challenge.formLetter("Rob", "Joe", "Take care.")).to.eql(result);
   });
