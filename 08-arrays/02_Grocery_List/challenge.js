@@ -1,10 +1,29 @@
-module.exports.addItem = function(item, array) {
-  if (array.indexOf(item) === -1) {
-    array.splice(array.length +1, 0, item);
-  };
-  return array;  
+module.exports.createCourse = function(courseTitle, courseDuration, courseStudents) {
+ var course = {
+    title: courseTitle,
+    duration: courseDuration,
+    students: courseStudents
+  }
+  return course;
 };
 
-module.exports.reverseSortedList = function(array) {
-  return array.sort().reverse();
+module.exports.addProperty = function (object, newProp, newValue) {
+  if (!object.hasOwnProperty(newProp)) {
+    object[newProp] = newValue;
+  }
+  return object;
+};
+
+module.exports.formLetter = function(letter) {
+  return 'Hello ' + letter.recipient + ',\n\n' + letter.msg + '\n\nSincerely,\n' + letter.sender;
+};
+
+module.exports.canIGet = function(item, money) {
+  var products = {
+    'MacBook Air': 999,
+    'MacBook Pro': 1299,
+    'Mac Pro': 2499,
+    'Apple Sticker': 1
+  }
+  return products[item] <= money;
 };
